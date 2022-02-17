@@ -1,9 +1,7 @@
 // imports
 import getFuzzyImage from "../assets/get-fuzzy.gif";
-import { Link, useNavigate } from "react-router-dom";
 
 export default function Main({ handleSearchSubmit, handleSearchChange }) {
-  // const navigate = useNavigate();
   return (
     <>
       <div className="main">

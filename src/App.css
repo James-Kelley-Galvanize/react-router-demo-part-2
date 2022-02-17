@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.definition-card {
+  background-color: antiquewhite;
+  color: darkslategray;
+  font-size: medium;
+  width: 80vw;
+  min-height: 15vh;
+  border-radius: 20px;
+  margin: 2vh;
+}

@@ -13,7 +13,7 @@ import { useState } from "react";
 const url = `https://api.dictionaryapi.dev/api/v2/entries/en/`;
 
 function App() {
-  let [wordData, setWordData] = useState(false);
+  let [wordData, setWordData] = useState([]);
   let [searchTerm, setSearchTerm] = useState(``);
   const navigate = useNavigate();
 
@@ -32,6 +32,9 @@ function App() {
       .then(setWordData)
       .catch((err) => console.error(err));
   }
+  function goHome() {
+    navigate(`/`);
+  }
 
   return (
     <div className="App">
@@ -47,8 +50,10 @@ function App() {
             }
           />
           <Route
-            path={`:word`}
-            element={<Word wordData={wordData} fetchWord={fetchWord} />}
+            path={`:word/*`}
+            element={
+              <Word wordData={wordData} fetchWord={fetchWord} goHome={goHome} />
+            }
           >
             <Route />
             <Route />
