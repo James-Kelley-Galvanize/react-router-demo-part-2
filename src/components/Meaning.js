@@ -8,7 +8,6 @@ export default function Meaning({ meaningObj }) {
         {definitions.map((definition, index) => (
           <div className="subdefinition" key={index}>
             <div>{definition.definition}</div>
-            <div>Synonyms {definition.synonyms.join(" ")}</div>
           </div>
         ))}
       </div>

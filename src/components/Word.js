@@ -11,6 +11,7 @@ export default function Word({ wordData, fetchWord, goHome }) {
   useEffect(() => {
     if (!wordData.length) fetchWord(params.word);
   });
+
   return (
     <>
       <nav>
@@ -31,30 +32,33 @@ export default function Word({ wordData, fetchWord, goHome }) {
 
       <h1>{params.word}</h1>
       <Routes>
-        <Route
-          index
-          element={
-            <Definition
-              key={
-                wordData[selectedDefinitionIndex].word + selectedDefinitionIndex
-              }
-              definitionObj={wordData[selectedDefinitionIndex]}
-            />
-          }
-        />
         {wordData.length ? (
-          <Route
-            path={":id"}
-            element={
-              <Definition
-                key={
-                  wordData[selectedDefinitionIndex].word +
-                  selectedDefinitionIndex
-                }
-                definitionObj={wordData[selectedDefinitionIndex]}
-              />
-            }
-          />
+          <>
+            <Route
+              path={":id"}
+              element={
+                <Definition
+                  key={
+                    wordData[selectedDefinitionIndex].word +
+                    selectedDefinitionIndex
+                  }
+                  definitionObj={wordData[selectedDefinitionIndex]}
+                />
+              }
+            />
+            <Route
+              index
+              element={
+                <Definition
+                  key={
+                    wordData[selectedDefinitionIndex].word +
+                    selectedDefinitionIndex
+                  }
+                  definitionObj={wordData[selectedDefinitionIndex]}
+                />
+              }
+            />
+          </>
         ) : (
           <></>
         )}
