@@ -48,10 +48,7 @@ function App() {
             element={
               <Word wordData={wordData} fetchWord={fetchWord} goHome={goHome} />
             }
-          >
-            <Route />
-            <Route />
-          </Route>
+          ></Route>
         </Routes>
       </header>
     </div>
