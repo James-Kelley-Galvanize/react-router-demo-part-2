@@ -15,7 +15,9 @@ export default function Word({ wordData, fetchWord, goHome }) {
   return (
     <>
       <nav>
-        <button onClick={goHome}>NEW SEARCH</button>
+        <button onClick={goHome}>HOME</button>
+        <br />
+        Select Definition:
         <br />
         {wordData.map((entry, index) => (
           <button
@@ -25,7 +27,7 @@ export default function Word({ wordData, fetchWord, goHome }) {
               navigate("" + index);
             }}
           >
-            {index}
+            {index + 1}
           </button>
         ))}
       </nav>
